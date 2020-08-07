@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    -- basic templates variables
+    <h1>Hello! {{my_variable}}</h1>
+    <h1>{{letters}}</h1>
+    <h1>Website</h1>
+    -- control flow twmplates
+    <ul>
+        {% for item in mylist %}
+        <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+    <h1>{{mylist}}</h1>
+    <ul>
+        {% for pup in puppies %}
+        <li>{{pup}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% if 'Rufus' in puppies %}
+        <p>FOund you rufus</p>
+        {% else %}
+        <p>Hmm.. Rufus is not on the list</p>
+        {% endif %}
+        
+
+    </ul>
+    <h1>{{puppies}}</h1>
+</body>
+</html>
