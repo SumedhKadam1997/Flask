@@ -7,19 +7,9 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
-#############################################################################
-############ CONFIGURATIONS (CAN BE SEPARATE CONFIG.PY FILE) ###############
-###########################################################################
 
-# Remember you need to set your environment variables at the command line
-# when you deploy this to a real website.
-# export SECRET_KEY=mysecret
-# set SECRET_KEY=mysecret
 app.config['SECRET_KEY'] = 'mysecret'
 
-#################################
-### DATABASE SETUPS ############
-###############################
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
