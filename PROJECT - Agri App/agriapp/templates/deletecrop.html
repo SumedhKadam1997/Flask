@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Delete Crops | {% endblock %}
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-2 pt-4"><br><br><br>
+        <div class="list-group border border-warning">
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Username: </strong> {{user.username}}
+            </a>
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Email: </strong> {{user.email}}
+            </a>
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Date Joined: </strong> {{user.date}}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <h1 class="pt-4" style="text-align: center;">Your Crops/s</h1>
+        <div class="table-responsive pt-4">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Crop Name</th>
+                        <th scope="col">Date Planted</th>
+                        <th scope="col">Area in Acres</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    {% for crop in crops %}
+                    <tr>
+                        <td scope="row"><a href="{{url_for('user.del_crop',delcrop=crop.crop_name)}}">{{crop.crop_name}}</a></th>
+                        <td>{{crop.date_planted}}</td>
+                        <td>{{crop.area}}</td>
+                    </tr> 
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

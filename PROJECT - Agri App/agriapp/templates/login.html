@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Log In | {% endblock %}
+<link rel="stylesheet" href="{{url_for('static',filename='login.css')}}">
+{% block content %}
+    <div class="container">
+        <br>
+        <div class="left">
+        <h2>Log In</h2>
+        <form class="form-group" method="POST">
+            {{form.hidden_tag()}}
+            <br>
+            <div class="form-group">
+                {{form.username.label}} {{form.username(class="form-control")}}
+            </div>
+            <div class="form-group">
+                {{form.password.label}} {{form.password(class="form-control")}}
+            </div>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+            <p>OR</p>
+            <div class="form-group">
+                <a href="{{url_for('user.register')}}" class="btn btn-outline-info">Don't have account</a>
+            </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

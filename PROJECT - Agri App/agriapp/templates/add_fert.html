@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Add Fertilizer | {% endblock %}
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-2 pt-4"><br><br><br>
+        <div class="list-group border border-warning">
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Username: </strong> {{current_user.username}}
+            </a>
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Email: </strong> {{current_user.email}}
+            </a>
+            <a class="list-group-item list-group-item-action customstyle">
+                <strong>Date Joined: </strong> {{current_user.date}}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <h1 class="pt-4" style="text-align: center;">Apply Fertilizers</h1>
+        <div class="container">
+            <br>
+            <div class="left">
+            <form class="form-group" method="POST">
+                {{form.hidden_tag()}}
+                <br>
+                <div class="form-group">
+                    <h5>Date of Apply</h5> {{form.date_of_apply(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Urea</h5> {{form.urea(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>D.A.P</h5> {{form.dap(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Ammonium Sulphate</h5> {{form.ammonium_sulphate(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>12:32:16</h5> {{form.bag_of_12X32X16(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>10:26:26</h5> {{form.bag_of_10X26X26(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>M.O.P</h5> {{form.mop(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Micro Nutrients</h5> {{form.micronutrients(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Sulphur</h5> {{form.sulphur(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>19:19:19</h5> {{form.bag_of_19X19X19(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>20:20:0:13</h5> {{form.bag_of_20X20X0X13(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Cost</h5> {{form.cost(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    <h5>Notes</h5> {{form.notes(class="form-control")}}
+                </div>
+                <br>
+                <div class="form-group">
+                    {{form.submit(class="btn btn-outline-info")}}
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
